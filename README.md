@@ -52,8 +52,8 @@ Asegúrate de tener instaladas las siguientes herramientas:
 1. **Clona el repositorio:**
     
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd <NOMBRE_DEL_REPOSITORIO>/docker
+    git clone https://github.com/Gamabere921/extract-data.git
+    cd extract-data/docker
     docker-compose up --build
     
     ```
