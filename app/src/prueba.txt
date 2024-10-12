@@ -1,0 +1,5 @@
+<!-- datos.xml -->
+<datos>
+    <usuario>usuario1</usuario>
+    <contraseña>contraseña1</contraseña>
+</datos>

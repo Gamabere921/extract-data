@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../app:/app  # Monta la carpeta de la aplicación en el contenedor
+    ports:
+      - "5000:5000"  # Mapea el puerto 5000 del contenedor al puerto 5000 de la máquina host
+    environment:
+      - FLASK_ENV=development  # Configura el entorno de Flask
+      - DATABASE_URL=postgresql://user:password@db:5432/mydatabase  # Ajusta la URL de conexión
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Persistencia de datos
+
+volumes:
+  db_data:
